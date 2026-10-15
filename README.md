@@ -37,7 +37,7 @@ The tool helps users inspect QR code contents before visiting a website.
 Clone the repository:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/sanay73/qr_analyzer.git
 cd qr-security-analyzer
 ```
 
