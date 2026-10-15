@@ -57,10 +57,6 @@ Step 8: Install OpenCV
 
 python -m pip install opencv-python
 
-If your project contains a "requirements.txt" file, use this command instead to install all listed dependencies:
-
-python -m pip install -r requirements.txt
-
 Step 9: Check OpenCV installation
 
 python -c "import cv2; print(cv2.__version__)"
