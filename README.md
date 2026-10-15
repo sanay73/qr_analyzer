@@ -1,123 +1,122 @@
-QR Security Analyzer 🛡️
+# 🛡️ QR Security Analyzer
 
-A Python-based cybersecurity tool that scans QR codes and checks URLs for suspicious signs before opening them.
+A Python-based cybersecurity tool that scans QR codes using a webcam or image file and analyzes embedded URLs for potentially suspicious characteristics.
 
-Features
+The tool helps users inspect QR code contents before visiting a website.
 
-- Scan QR codes using a webcam.
-- Scan QR codes from images.
-- Extract QR code content.
-- Check HTTPS usage.
-- Detect IP-based URLs.
-- Identify URL shorteners.
-- Detect suspicious URL patterns.
-- Calculate a basic risk score.
+## ✨ Features
 
-Requirements
+* 📷 Scan QR codes directly using a webcam
+* 🖼️ Scan QR codes from image files
+* 🔗 Decode embedded QR data
+* 🔒 Check HTTPS usage
+* 🌐 Detect IP-address-based URLs
+* 🔀 Identify known URL shorteners
+* ⚠️ Detect suspicious URL characters and patterns
+* 🔍 Check security-related keywords
+* 📊 Generate a heuristic security score
+* 🚨 Classify results as SAFE, SUSPICIOUS, or HIGH RISK
+* 💻 Run directly from the terminal
 
-- Kali Linux or another supported Linux system.
-- Python 3.
-- Git.
-- pip.
-- Webcam (optional).
-- QR code image (optional).
+## 🧰 Technologies Used
 
-Installation Steps
+* Python 3
+* OpenCV
+* `re`
+* `ipaddress`
+* `urllib.parse`
 
-Step 1: Update Kali Linux
+## 📋 Requirements
 
-sudo apt update
+* Python 3
+* OpenCV Python package
+* A webcam for direct scanning, or an image containing a QR code
 
-Step 2: Install required packages
+## 🚀 Installation
 
-sudo apt install git python3 python3-pip python3-venv -y
+Clone the repository:
 
-Step 3: Clone the GitHub repository
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd qr-security-analyzer
+```
 
+Create a virtual environment:
 
-git clone https://github.com/sanay73/qr_analyzer.git
-
-Step 4: Enter the project folder
-
-cd qr-Analyzer
-
-Step 5: Create a virtual environment
-
+```bash
 python3 -m venv venv
-
-Step 6: Activate the virtual environment
-
 source venv/bin/activate
+```
 
-Step 7: Upgrade pip
+Install the required package:
 
-python -m pip install --upgrade pip
+```bash
+python3 -m pip install opencv-python
+```
 
-Step 8: Install OpenCV
+## ▶️ Run the Tool
 
-python -m pip install opencv-python
+```bash
+python3 qr_security_analyzer.py
+```
 
-Step 9: Check OpenCV installation
+## 🖥️ Usage
 
-python -c "import cv2; print(cv2.__version__)"
+After starting the tool, select an option from the menu:
 
-Step 10: Run the project
+```text
+========================================
+         QR SECURITY ANALYZER
+========================================
 
-Use the filename that exists in your project folder.
+1. Scan QR using Camera
+2. Scan QR from Image
+3. Exit
 
-python3 qr_analyzer.py
+Select option:
+```
 
-If your main Python file has a different name, replace "qr_analyzer.py" with that filename.
+### Camera Scanning
 
-How to Use
+1. Select option `1`.
+2. Show a QR code to your webcam.
+3. The tool extracts the QR data.
+4. Review the security analysis in the terminal.
 
-1. Start the program.
-2. Select webcam scanning or image scanning.
-3. Allow camera access if prompted.
-4. Scan a QR code or enter an image path.
-5. View the decoded content.
-6. Review the security findings and risk score.
+### Image Scanning
 
-Example Image Path
+1. Select option `2`.
+2. Enter the path to your QR image.
+3. The tool decodes the QR content.
+4. Review the analysis results.
 
-/home/kali/Downloads/test.png
+## 📊 Security Analysis
 
-Security Checks
+The tool checks URL characteristics such as:
 
-Check| Purpose
-HTTPS| Checks whether the URL uses HTTPS.
-IP-based URL| Detects URLs using an IP address.
-URL shortener| Identifies selected shortening services.
-Suspicious patterns| Flags selected suspicious characters.
-Keywords| Checks for words such as login or password.
-Risk score| Estimates risk using basic rules.
+* HTTPS usage
+* IP-address-based URLs
+* Known URL shorteners
+* Suspicious characters
+* Security-related keywords
+* URL encoding
 
-Important Security Notes
 
-- Do not open suspicious links.
-- HTTPS does not guarantee that a website is safe.
-- A low risk score does not guarantee safety.
-- This tool uses basic checks and may produce false positives.
-- The tool should inspect QR content without automatically opening URLs.
 
-Technologies Used
+## 🔐 Security Notice
 
-- Python 3
-- OpenCV
-- Regular expressions
-- IP address validation
-- URL parsing
+* The tool does not automatically open decoded URLs.
+* HTTPS does not guarantee that a website is trustworthy.
+* Legitimate URLs can trigger warnings.
+* A high score does not guarantee that a website is safe.
+* The tool uses basic heuristic checks and does not replace professional threat-intelligence services.
 
-Project Structure
+## 🎯 Project Objective
 
-QR-Security-Analyzer/
-├── qr_analyzer.py
-├── requirements.txt
-├── README.md
-└── venv/
+The objective of this project is to demonstrate defensive cybersecurity techniques through QR decoding, URL inspection, suspicious-pattern detection, and risk assessment.
 
-Your actual files may differ. Do not upload the "venv/" folder to GitHub.
 
-Disclaimer
 
-This project is for educational and defensive cybersecurity purposes only. Use it responsibly.
+## 👨‍💻 Author
+
+Created as a cybersecurity learning project.
